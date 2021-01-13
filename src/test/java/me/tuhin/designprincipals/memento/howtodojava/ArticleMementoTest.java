@@ -1,14 +1,11 @@
-package me.tuhin.designprincipals.memento;
+package me.tuhin.designprincipals.memento.howtodojava;
 
-import me.tuhin.designprincipals.memento.howtodojava.Article;
-import me.tuhin.designprincipals.memento.howtodojava.ArticleMemento;
 import org.junit.jupiter.api.Test;
 
 public class ArticleMementoTest {
 
     @Test
-    public void mementoPattern()
-    {
+    public void mementoPattern() {
         Article article = new Article(1, "My Article");
         article.setContent("ABC");      //original content
         System.out.println(article);

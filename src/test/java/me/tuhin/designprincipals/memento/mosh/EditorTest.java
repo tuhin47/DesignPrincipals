@@ -3,11 +3,9 @@ package me.tuhin.designprincipals.memento.mosh;
 import lombok.var;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class EditorTest {
     @Test
-    public void testMementoMosh(){
+    public void testMementoMosh() {
         var editor = new Editor();
         var history = new History();
 
