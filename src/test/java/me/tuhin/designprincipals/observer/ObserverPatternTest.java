@@ -1,6 +1,9 @@
 package me.tuhin.designprincipals.observer;
 
 import lombok.var;
+import me.tuhin.designprincipals.observer.exercise.StatusBar;
+import me.tuhin.designprincipals.observer.exercise.Stock;
+import me.tuhin.designprincipals.observer.exercise.StockListView;
 import me.tuhin.designprincipals.observer.mosh.Chart;
 import me.tuhin.designprincipals.observer.mosh.DataSource;
 import me.tuhin.designprincipals.observer.mosh.Sheet;
@@ -17,5 +20,31 @@ class ObserverPatternTest {
         dataSource.addObserver(sheet2);
         dataSource.addObserver(chart);
         dataSource.setValue(69);
+    }
+
+    @Test
+    void observerPatternMoshExercise() {
+
+        var stock01 = new Stock("$", 23);
+        var stock02 = new Stock("swe", 33);
+        var stock03 = new Stock("stock3", 44);
+
+        var statusBar = new StatusBar();
+        var stockList = new StockListView();
+
+        statusBar.addStock(stock01);
+        statusBar.addStock(stock02);
+        statusBar.addStock(stock03);
+
+        stockList.addStock(stock01);
+        stockList.addStock(stock03);
+
+        stock03.addObserver(statusBar);
+        stock03.addObserver(stockList);
+        stock01.addObserver(statusBar);
+        stock01.addObserver(stockList);
+
+        stock01.setPrice(123);
+        stock03.setPrice(140);
     }
 }
