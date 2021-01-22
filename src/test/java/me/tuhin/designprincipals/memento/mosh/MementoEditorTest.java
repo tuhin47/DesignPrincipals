@@ -3,7 +3,7 @@ package me.tuhin.designprincipals.memento.mosh;
 import lombok.var;
 import org.junit.jupiter.api.Test;
 
-public class EditorTest {
+public class MementoEditorTest {
     @Test
     public void testMementoMosh() {
         var editor = new Editor();
