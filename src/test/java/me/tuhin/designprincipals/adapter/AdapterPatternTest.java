@@ -8,6 +8,8 @@ import me.tuhin.designprincipals.adapter.mosh.Image;
 import me.tuhin.designprincipals.adapter.mosh.ImageView;
 import me.tuhin.designprincipals.adapter.mosh.VividFilter;
 import me.tuhin.designprincipals.adapter.mosh.filters.Caramel;
+import me.tuhin.designprincipals.adapter.telusko.AssignmentWork;
+import me.tuhin.designprincipals.adapter.telusko.PenAdapter;
 import org.junit.jupiter.api.Test;
 
 class AdapterPatternTest {
@@ -25,5 +27,12 @@ class AdapterPatternTest {
         EmailClient emailClient = new EmailClient();
         emailClient.addEmailProvider(new GmailAdapter(new GmailClient()));
         emailClient.downloadEmails();
+    }
+
+    @Test
+    void adapterPatternTelusko() {
+        PenAdapter penAdapter = new PenAdapter();
+        AssignmentWork assignmentWork = new AssignmentWork(penAdapter);
+        assignmentWork.writeAssignment("Bla Bla Bla");
     }
 }
